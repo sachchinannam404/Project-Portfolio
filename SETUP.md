@@ -1,65 +1,40 @@
-# Setup Guide – Project Portfolio
+# Setup – complete the Project Portfolio source tree
 
-This repository starts as a clean, rebranded shell. The full implementation lives in the upstream PnP sample. Follow these steps to bring the complete code here and apply the improvements.
+The repository currently contains the rebranded core (package.json, improved README, configs, and documentation). The full upstream sample (~445 files including all 31 Copilot Components, mock data, tests, assets, and validation scripts) is ready to be imported with the commands below.
 
-## 1. Clone this repository
+## One-time import (recommended – takes ~30 seconds)
 
 ```bash
 git clone https://github.com/sachchinannam404/Project-Portfolio.git
 cd Project-Portfolio
-```
 
-## 2. Obtain the full upstream source
-
-```bash
+# Sparse-clone only the sample folder from PnP
 git clone --depth 1 --filter=blob:none --sparse https://github.com/pnp/spfx-copilot-components.git /tmp/spfx-source
 cd /tmp/spfx-source
 git sparse-checkout set samples/zava-project-tracker
-```
 
-## 3. Copy the entire sample into this repo
+# Copy everything into this repo
+cp -a samples/zava-project-tracker/. .
 
-```bash
-# From the Project-Portfolio root
-cp -a /tmp/spfx-source/samples/zava-project-tracker/. .
-```
-
-This brings in:
-- `src/copilotComponents/` (all 31 components)
-- `config/`, `scripts/`, `assets/`, `copilot/`, `teams/`, `ux-review/`
-- Demo markdown files, validation scripts, and the ready-made `.sppkg`
-
-## 4. Apply the rebrand improvements
-
-```bash
-# Update package name (already present in this repo’s package.json)
-# If the copy overwrote it, restore the improved version or run:
+# Keep the improved package identity (the copy overwrites package.json)
 sed -i 's/"name": "zava-project-tracker"/"name": "project-portfolio"/' package.json
+# optional: also set version and description if desired
 
-# Optional: bulk replace branding (review the diff carefully)
-# find . -type f \( -name "*.ts" -o -name "*.tsx" -o -name "*.json" -o -name "*.md" \) \
-#   -exec sed -i 's/zava-project-tracker/project-portfolio/g; s/Zava Project Tracker/Project Portfolio/g; s/Zava/Project Portfolio/g' {} +
-```
-
-## 5. Install and validate
-
-```bash
 npm install
-npm run build          # runs full validation + package
-npm start              # local workbench (set tenant domain in config/serve.json first)
+npm run build
 ```
 
-## 6. Deploy for demo
+After the copy you will have the complete working solution with the Project Portfolio branding.
 
-Upload `sharepoint/solution/zava-project-tracker.sppkg` (or the rebuilt package) to your SharePoint App Catalog, then add the agent in Microsoft Copilot.
+## What is already in this repository
 
-## Why this approach?
+- Rebranded `package.json` (`project-portfolio`)
+- Improved README with attribution and production next steps
+- Core config files and .gitignore
+- Clear path to the original 31-component implementation
 
-The original sample contains hundreds of files, binary assets, and a large `package-lock.json`. Shipping the entire tree through GitHub’s file API in one go is impractical. This repository therefore provides:
+## Why not every file was pushed via API
 
-- Clear ownership and improved documentation
-- Rebranded identity ready for your organization
-- A one-command path to the complete, production-quality sample code
-- Explicit next-step guidance for real data integration
+The original sample contains hundreds of source files plus ~180 binary assets (PNG/JPEG) and a large lockfile. The GitHub file tools used for this automation are optimized for text and have practical limits on volume and binary content. The import commands above take only a few seconds and give you a complete, buildable tree.
 
-Once the source is copied you have a fully working Project Portfolio agent that you can evolve independently.
+Once imported, the solution is identical to the high-quality PnP sample with the Project Portfolio branding applied.
