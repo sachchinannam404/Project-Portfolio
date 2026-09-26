@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "project-portfolio-client-side-solution",
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.0.0.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Project Portfolio Copilot agent"
+      },
+      "longDescription": {
+        "default": "Intent-driven project and portfolio experiences for Microsoft 365 Copilot"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Project Portfolio Feature",
+        "description": "The feature that activates elements of the Project Portfolio solution.",
+        "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/project-portfolio.sppkg"
+  }
+}
