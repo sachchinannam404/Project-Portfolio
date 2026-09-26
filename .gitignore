@@ -41,9 +41,9 @@ obj
 ux-review/review.js
 ux-review/review.js.map
 
-# Keep the packaged solution so the sample (mock data only) can be
+# Keep the packaged solution so this scenario sample (mock data only) can be
 # deployed and demoed without building from source. Everything else under the
 # build-output solution folder stays ignored.
 !sharepoint/solution/
 sharepoint/solution/*
-!sharepoint/solution/*.sppkg
+!sharepoint/solution/zava-project-tracker.sppkg
