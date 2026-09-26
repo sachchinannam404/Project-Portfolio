@@ -1,7 +1,8 @@
 {
-  "name": "zava-project-tracker",
-  "version": "0.0.1",
+  "name": "project-portfolio",
+  "version": "0.1.0",
   "private": true,
+  "description": "Project Portfolio – intent-driven project, portfolio, capacity and decision experiences for Microsoft 365 Copilot (improved from PnP Zava Project Tracker sample)",
   "engines": {
     "node": ">=22.14.0 < 23.0.0"
   },
