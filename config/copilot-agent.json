@@ -3,7 +3,7 @@
   "agents": [
     {
       "name": {
-        "default": "Zava AI Project Portfolio Agent"
+        "default": "Project Portfolio"
       },
       "description": {
         "default": "Intent-driven project delivery, AI spend, portfolio governance, capacity, and approvals."
